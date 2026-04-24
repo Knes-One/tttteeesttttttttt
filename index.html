@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Покос травы</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:
+radial-gradient(circle at top,rgba(34,197,94,.18),transparent 35%),
+#07120d;
+color:white;
+}
+
+.page{
+max-width:480px;
+margin:0 auto;
+padding:18px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:18px;
+}
+
+.tag{
+margin:0 auto;
+padding:9px 15px;
+border-radius:999px;
+background:rgba(34,197,94,.14);
+border:1px solid rgba(34,197,94,.35);
+color:#86efac;
+font-size:13px;
+animation:up .6s ease both;
+}
+
+h1{
+text-align:center;
+font-size:34px;
+line-height:1.05;
+font-weight:900;
+animation:up .7s ease both;
+}
+
+.text{
+text-align:center;
+max-width:320px;
+margin:0 auto;
+font-size:15px;
+color:rgba(255,255,255,.7);
+animation:up .8s ease both;
+}
+
+.photo{
+width:100%;
+height:270px;
+object-fit:cover;
+border-radius:26px;
+box-shadow:0 25px 70px rgba(0,0,0,.5);
+animation:scale .8s ease both;
+}
+
+.consult,
+.price{
+padding:22px;
+border-radius:28px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+text-align:center;
+animation:up .9s ease both;
+}
+
+.consult small{
+display:block;
+font-size:14px;
+opacity:.85;
+margin-bottom:8px;
+}
+
+.consult a.phone{
+display:block;
+font-size:24px;
+font-weight:900;
+text-decoration:none;
+color:white;
+margin-bottom:14px;
+}
+
+.call-btn{
+display:block;
+padding:16px;
+border-radius:18px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+color:white;
+text-decoration:none;
+font-weight:900;
+position:relative;
+overflow:hidden;
+}
+
+.call-btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:200%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+transition:.5s;
+}
+
+.call-btn:hover::before{
+left:100%;
+}
+
+.call-btn:active{
+transform:scale(.96);
+}
+
+.price span{
+font-size:13px;
+opacity:.85;
+}
+
+.price strong{
+font-size:28px;
+display:block;
+margin-top:6px;
+}
+
+.order{
+padding:20px;
+border-radius:30px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+box-shadow:0 20px 60px rgba(34,197,94,.25);
+animation:up 1.1s ease both;
+}
+
+.order h2{
+font-size:22px;
+margin-bottom:12px;
+}
+
+input{
+width:100%;
+border:none;
+outline:none;
+background:rgba(255,255,255,.15);
+color:white;
+border-radius:16px;
+padding:15px;
+margin-bottom:10px;
+}
+
+input::placeholder{
+color:rgba(255,255,255,.7);
+}
+
+button{
+width:100%;
+border:none;
+border-radius:18px;
+padding:16px;
+font-weight:900;
+color:white;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+button::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:200%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+transition:.6s;
+}
+
+button:hover::before{
+left:100%;
+}
+
+button:active{
+transform:scale(.96);
+}
+
+.whatsapp{
+background:linear-gradient(135deg,#25d366,#128c7e);
+margin-top:4px;
+}
+
+.telegram{
+background:linear-gradient(135deg,#38bdf8,#0284c7);
+margin-top:10px;
+}
+
+.footer{
+text-align:center;
+font-size:12px;
+opacity:.35;
+margin-top:25px;
+}
+
+@keyframes up{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes scale{
+from{opacity:0;transform:scale(.96);}
+to{opacity:1;transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+<section class="hero">
+
+<div class="tag">Покос • уборка • вывоз</div>
+
+<h1>Быстро наведём порядок на участке</h1>
+
+<p class="text">
+Покос травы, спил кустарников и уборка участков
+</p>
+
+<img class="photo" src="best.jpg" alt="Покос травы">
+
+<div class="consult">
+<small>Бесплатная консультация</small>
+<a class="phone" href="tel:+79676536461">+7 967 653-64-61</a>
+<a class="call-btn" href="tel:+79676536461">Позвонить</a>
+</div>
+
+<div class="price">
+<span>Цена зависит от участка</span>
+<strong>350–400 ₽ / сотка</strong>
+</div>
+
+<div class="order">
+<h2>Быстрый заказ</h2>
+
+<input id="area" placeholder="Площадь участка">
+<input id="address" placeholder="Адрес">
+<input id="phone" type="tel" inputmode="numeric" pattern="[0-9]*" placeholder="Номер телефона" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+<button class="whatsapp" onclick="sendWhatsApp()">Отправить в WhatsApp</button>
+<button class="telegram" onclick="sendTelegram()">Отправить в Telegram</button>
+</div>
+
+<div class="footer">
+© Все данные защищены
+</div>
+
+</section>
+</main>
+
+<script>
+const whatsappPhone='79676536461';
+const telegramUsername='SanyaDur';
+
+function getText(){
+const area=document.getElementById('area').value.trim();
+const address=document.getElementById('address').value.trim();
+const phone=document.getElementById('phone').value.trim();
+
+if(!area||!address||!phone){
+alert('Заполните все поля');
+return null;
+}
+
+return `Здравствуйте! Хотел бы заказать покос травы.
+
+Площадь участка: ${area}
+Адрес: ${address}
+Номер телефона: ${phone}`;
+}
+
+function sendWhatsApp(){
+const text=getText();
+if(!text)return;
+window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`,'_blank');
+}
+
+function sendTelegram(){
+const text=getText();
+if(!text)return;
+window.open(`https://t.me/${telegramUsername}?text=${encodeURIComponent(text)}`,'_blank');
+}
+</script>
+
+</body>
+</html>
